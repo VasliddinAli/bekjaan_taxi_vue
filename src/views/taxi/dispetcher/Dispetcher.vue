@@ -78,7 +78,7 @@
             <BCol xl-6>
                 <BCard no-body class="py-2">
                     <div style="height:450px; width:100%">
-                        <l-map ref="map" zoom="12" :center="coord2">
+                        <l-map ref="map" :zoom="12" :center="coord2">
                             <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="base"
                                 name="OpenStreetMap"></l-tile-layer>
                             <l-marker :lat-lng="coord2"></l-marker>

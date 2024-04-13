@@ -36,8 +36,6 @@
                                 </BButton>
                             </BCol>
                             <BCol xxl="4" lg="6">
-                                <BFormInput type="text" class="form-control search me-1" placeholder="Qidirish ..."
-                                    v-model="searchQuery" />
                             </BCol>
                         </BRow>
                     </BCardBody>
@@ -65,20 +63,31 @@
                                         <BTh>
                                             <BFormSelect v-model="filter.address_group_id" class="form-select">
                                                 <BFormSelectOption :value="null" disabled>Tanlang</BFormSelectOption>
-                                                <BFormSelectOption v-for="address_group in address_groups" :value="address_group.id"
-                                                    :key="address_group.id">{{ address_group.name }}</BFormSelectOption>
+                                                <BFormSelectOption v-for="address_group in address_groups"
+                                                    :value="address_group.id" :key="address_group.id">{{
+                                                        address_group.name }}</BFormSelectOption>
                                             </BFormSelect>
                                         </BTh>
                                     </BTr>
-                                    <BTr v-for="group in addresses" :key="group.id">
-                                        <BTh scope="row"> {{ group.id }} </BTh>
-                                        <BTd>{{ group.name }}</BTd>
-                                        <BTd> {{ group.address_group.name }} </BTd>
+                                    <BTr v-for="address in addresses" :key="address.id">
+                                        <BTh scope="row"> {{ address.id }} </BTh>
+                                        <BTd>
+                                            <router-link
+                                                :to="{ name: 'address_detail', params: { id: address.id } }">
+                                                {{ address.name }}
+                                            </router-link>
+                                        </BTd>
+                                        <BTd>
+                                            <router-link
+                                                :to="{ name: 'address_category_detail', params: { id: address.address_group_id } }">
+                                                {{ address.address_group.name }}
+                                            </router-link>
+                                        </BTd>
                                         <BTd>
                                             <ul class="list-unstyled hstack gap-1 mb-0">
                                                 <li data-bs-toggle="tooltip" data-bs-placement="top" aria-label="View">
                                                     <router-link
-                                                        :to="{ name: 'address_detail', params: { id: group.id } }"
+                                                        :to="{ name: 'address_detail', params: { id: address.id } }"
                                                         class="btn btn-sm btn-soft-primary"><i
                                                             class="mdi mdi-eye-outline"></i></router-link>
                                                 </li>
@@ -164,7 +173,9 @@ export default {
                 {
                     id: 1,
                     name: "Lazzat milliy taomlari",
+                    address_group_id: 1,
                     address_group: {
+                        id: 1,
                         name: "Buloqboshi"
                     },
                 }
