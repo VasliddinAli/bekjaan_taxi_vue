@@ -215,6 +215,72 @@ export default [
     component: () => import("../views/taxi/addresses/Detail.vue")
   },
 
+  // tarifs
+  {
+    path: "/tarifs",
+    name: "tarifs",
+    meta: { title: "Ta'riflar", authRequired: true },
+    component: () => import("../views/taxi/tarifs/List.vue")
+  },
+  {
+    path: "/tarif/create",
+    name: "tarif_create",
+    meta: { title: "Ta'rif qo'shish", authRequired: true },
+    component: () => import("../views/taxi/tarifs/Add.vue")
+  },
+  {
+    path: "/tarif/detail/:id",
+    name: "tarif_detail",
+    meta: { title: "Ta'rif haqida", authRequired: true },
+    component: () => import("../views/taxi/tarifs/Detail.vue")
+  },
+
+  // cars
+  {
+    path: "/cars",
+    name: "cars",
+    meta: { title: "Moshinalar", authRequired: true },
+    component: () => import("../views/taxi/cars/List.vue")
+  },
+  {
+    path: "/car/create",
+    name: "car_create",
+    meta: { title: "Moshina qo'shish", authRequired: true },
+    component: () => import("../views/taxi/cars/Add.vue")
+  },
+  {
+    path: "/car/detail/:id",
+    name: "car_detail",
+    meta: { title: "Moshina haqida", authRequired: true },
+    component: () => import("../views/taxi/cars/Detail.vue")
+  },
+
+
+  // servises
+  {
+    path: "/servises",
+    name: "servises",
+    meta: { title: "Xizmatlar", authRequired: true },
+    component: () => import("../views/taxi/servises/List.vue")
+  },
+  {
+    path: "/servise/create",
+    name: "servise_create",
+    meta: { title: "Xizmat qo'shish", authRequired: true },
+    component: () => import("../views/taxi/servises/Add.vue")
+  },
+  {
+    path: "/servise/detail/:id",
+    name: "servise_detail",
+    meta: { title: "Xizmat haqida", authRequired: true },
+    component: () => import("../views/taxi/servises/Detail.vue")
+  },
+
+
+
+
+
+
 
 
 

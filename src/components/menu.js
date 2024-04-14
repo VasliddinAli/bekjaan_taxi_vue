@@ -45,10 +45,18 @@ export const menuItems = [
                 label: "Manzillar",
                 link: "/addresses",
             },
-            // {
-            //     label: "menuitems.dashboards.list.saas",
-            //     link: "/dashboard/saas",
-            // },
+            {
+                label: "Ta'riflar",
+                link: "/tarifs",
+            },
+            {
+                label: "Moshinalar",
+                link: "/cars",
+            },
+            {
+                label: "Xizmatlar",
+                link: "/servises",
+            },
             // {
             //     label: "menuitems.dashboards.list.crypto",
             //     link: "/dashboard/crypto",

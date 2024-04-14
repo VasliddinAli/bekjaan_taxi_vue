@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <PageHeader title="Manzil guruhi yaratish" pageTitle="Manzil guruhlari" />
+        <PageHeader title="Manzil yaratish" pageTitle="Manzil guruhlari" />
 
         <BRow>
             <BCol cols="4">
